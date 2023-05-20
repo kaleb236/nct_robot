@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true">
+    <rosparam file="$(find hotel_robot)/params/ekf_deneme.yaml" command="load" />
+
+    <remap from="odometry/filtered" to="odom2"/>
+    <remap from="accel/filtered" to="accel"/>
+
+  </node>
+</launch>

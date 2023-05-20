@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+	<robot name="rur">
+		<link name="base_link">
+			<visual>
+				<origin rpy="0 0 -1.57" xyz="0.0 0.0 0.035"/>
+				<geometry>
+				  <mesh filename="package://hotel_robot/meshes/robot.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			  </visual>
+		</link>
+		
+		<link name="laser">
+		</link>
+
+		<joint name="base_link_to_laser" type="fixed">
+			<parent link="base_link"/>
+			<child link="laser"/>
+			<origin xyz="0.2 0.0 0.2" rpy="0.0 0.0 3.14159265 "/>
+			<axis xyz="0 0 0"/>
+		</joint>	
+
+		<!--Gorkem-->
+
+		<link name="laser2">
+		</link>
+
+		<joint name="base_link_to_laser2" type="fixed">
+			<parent link="base_link"/>
+			<child link="laser2"/>
+			<origin xyz="-0.2 0.0 0.2" rpy="0.0 0.0 0.0"/>
+			<axis xyz="0 0 0"/>
+		</joint>
+		
+		<!--Gorkem-->
+
+		<link name="camera_link">
+		</link>
+
+		<joint name="camera_to_base_link" type="fixed">
+			<parent link="base_link"/>
+			<child link="camera_link"/>
+			<origin xyz="0.12 0.0 0.131" rpy="0.0 -0.27 0.0"/>
+			<axis xyz="0 0 0"/>
+		</joint>
+
+		<link name="imu_link">
+		</link>
+
+		<joint name="imu_link_to_laser" type="fixed">
+			<parent link="base_link"/>
+			<child link="imu_link"/>
+			<origin xyz="0 0 0" rpy="0 0.0 0.0"/>
+			<axis xyz="0 0 0"/>
+		</joint>
+		
+	</robot>

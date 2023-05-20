@@ -1,0 +1,47 @@
+<launch>
+    <param name ="/use_sim_time" value="false"/>		
+
+    <arg name="gui" default="false" />
+    <param name="use_gui" value="$(arg gui)"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+
+    <param name="robot_description" command="cat $(find nct_robot)/urdf/rur.urdf" />
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    
+
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py">
+        <param name="port" value="/dev/ttyACM0"/>
+        <param name="baud" value="115200"/>
+    </node>
+
+    <include ns="lidar0" file="$(find nct_robot)/launch/rplidar.launch">
+        <arg name="serial_port" value="/dev/ttyUSB1"/>
+        <arg name="frame_id" value="laser"/>
+    </include>
+    <!-- <include ns="lidar1" file="$(find nct_robot)/launch/rplidar.launch">
+        <arg name="serial_port" value="/dev/ttyUSB2"/>
+        <arg name="frame_id" value="laser2"/>
+    </include> -->
+
+    	<!-- intelrealsense cam biringup-->
+    <!-- <include file="$(find nct_robot)/launch/3dcamera.launch">
+    <rosparam>
+        /camera/stereo_module/emitter_enabled: false
+    </rosparam>
+	</include>  -->
+
+    <!-- imu driver -->
+    <include file="$(find fdilink_ahrs)/launch/ahrs_driver.launch">
+        <arg name="port"  value="/dev/ttyUSB0"/>
+	<arg name="frame_id"  value="imu_link"/>
+    </include> 
+    
+
+</launch>
