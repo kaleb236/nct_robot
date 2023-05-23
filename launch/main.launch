@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="move_forward_only" default="false"/>
-    <arg name="map_file" default="$(find nct_robot)/maps/floor_20.yaml"/>
+    <arg name="map_file" default="$(find nct_robot)/maps/teknokent.yaml"/>
     <!-- <arg name="map_file" default="$(find nct_robot)/maps/office_camera.yaml"/> -->
 
     <!-- bringup launch -->

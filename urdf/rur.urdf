@@ -4,7 +4,7 @@
 			<visual>
 				<origin rpy="0 0 -1.57" xyz="0.0 0.0 0.035"/>
 				<geometry>
-				  <mesh filename="package://hotel_robot/meshes/robot.stl" scale="0.001 0.001 0.001"/>
+				  <mesh filename="package://nct_robot/meshes/robot.stl" scale="0.001 0.001 0.001"/>
 				</geometry>
 			  </visual>
 		</link>

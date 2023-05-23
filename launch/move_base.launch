@@ -14,7 +14,7 @@
       <rosparam file="$(find nct_robot)/params/local_costmap_params.yaml" command="load" />
       <rosparam file="$(find nct_robot)/params/global_costmap_params.yaml" command="load" />
       <rosparam file="$(find nct_robot)/params/base_local_planner_params_teb.yaml" command="load" />
-      <rosparam file="$(find nct_robot)/params/base_global_planner_param.yaml" command="load" />
+      <rosparam file="$(find nct_robot)/params/base_global_planner_params.yaml" command="load" />
       <!-- <rosparam file="$(find nct_robot)/params/costmap_converter_params.yaml" command="load" /> -->
       <param name="controller_frequency" value="10.0" />
 
@@ -24,4 +24,3 @@
   <!-- <include file="$(find nct_robot)/launch/pointcloud_to_laserscan.launch">
 	</include>  -->
 </launch>
-

@@ -1,0 +1,27 @@
+1. get jetson updates
+	. sudo apt update
+	. sudo apt upgrade
+	. reboot
+
+2. install ros melodic from "http://wiki.ros.org/melodic/Installation/Ubuntu"
+3. create ros workspace
+4. install nct package and required packages
+	* git clone -b melodic-devel
+############# SENSORS PACKAGES #################
+	. sudo apt-get install ros-melodic-serial
+	. install  rplidar_ros "https://github.com/Slamtec/rplidar_ros"
+	. install rosserial "https://github.com/ros-drivers/rosserial/tree/melodic-devel"
+	. install wheel_tec imu ros "https://github.com/kaleb236/imu"
+
+############ NAVIGATION PACKAGES ##############
+	. sudo apt-get install libsdl-image1.2-dev
+	. sudo apt-get install libsdl-dev
+	. sudo apt install ros-melodic-tf2-sensor-msgs
+	. sudo apt install ros-melodic-move-base-msgs
+	. sudo apt install ros-melodic-teb-local-planner
+	. install ros_navigation "https://github.com/ros-planning/navigation"
+	. install robot_localization "https://github.com/cra-ros-pkg/robot_localization.git"
+		. before cartkin_make "rosdep install robot_localization"
+	. install nct_robot "https://github.com/kaleb236/nct_robot.git"
+
+
